@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+  <!-- <link rel="stylesheet" href="C:\Users\Анастасия\Desktop\webdev-exam-2020-05166\bootstrap-4.5.0-dist\bootstrap-4.5.0-dist\css\bootstrap.min.css"  >
+    <link href="C:\Users\Анастасия\Desktop\webdev-exam-2020-05166\bootstrap-4.5.0-dist\bootstrap-4.5.0-dist\css\bootstrap.css" rel="stylesheet">-->
+      <link rel="stylesheet" href="\bootstrap-4.5.0-dist\bootstrap-4.5.0-dist\css\bootstrap.min.css">
+     <link href="\bootstrap-4.5.0-dist\bootstrap-4.5.0-dist\css\bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href= "styles/admin.css">
+    <script src="js/admin.js"></script>
+       <title>Admin</title>
+  </head>
+
+  <body>
+    <form class="form-inline mt-2 mt-md-0">
+        <a class="btn btn btn-outline-danger my-2 my-sm-0" style="margin:30px;" href="index.html" role="button">Back &raquo;</a>
+      </form>
+     <h1>Предприятия общественного питания города Москвы</h1>
+
+         <hr>
+     
+    
+
+  
+  
+  <div class="container-fluid">
+      <form>
+          <div class="row mb-3">
+              <div class="col-md-8 themed-grid-col">
+                  <div class="pb-3">
+                      Наименование
+                  </div>
+                  <div class="row">
+                      <div class="form-group col-md-12">
+                          <input type="text" class="form-control" id="inputName" placeholder="Choose...">
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 themed-grid-col">
+                  <div class="pb-3">
+                      Административный округ
+                  </div>
+                  <div class="row">
+                      <div class="form-group col-md-12">
+                          <select class="form-control" id="inputadmArea">
+                              <option selected>любой</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row mb-3">
+              <div class="col-md-5 themed-grid-col">
+                  <div class="pb-3">
+                      Количество посадочных мест
+                  </div>
+                  <div class="row">
+                      <div class="col-md-1 themed-grid-col">
+                          от
+                      </div>
+                      <div class="col-md-5 themed-grid-col">
+                          <div class="form-group">
+                              <input type="text" class="form-control" id="inputSeatsCountFrom">
+                          </div>
+                      </div>
+                      <div class="col-md-1 themed-grid-col">
+                          до
+                      </div>
+                      <div class="col-md-5 themed-grid-col">
+                          <div class="form-group">
+                              <input type="text" class="form-control" id="inputSeatsCountTo">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3 themed-grid-col">
+                  <div class="pb-3">
+                      Является сетевым
+                  </div>
+                  <div class="row">
+                      <div class="form-group col-md-12">
+                          <select class="form-control" id="inputIsNetObj">
+                              <option selected>любой</option>
+                              <option>Да</option>
+                              <option>Нет</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 themed-grid-col">
+                  <div class="pb-3">
+                      Район
+                  </div>
+                  <div class="row">
+                      <div class="form-group col-md-12">
+                          <select id="inputDistrict" class="form-control">
+                              <option selected>любой</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row mb-3">
+              <div class="col-md-5 themed-grid-col">
+                  <div class="pb-3">
+                      Дата создания
+                  </div>
+                  <div class="row">
+                      <div class="col-md-1 themed-grid-col">
+                          с
+                      </div>
+                      <div class="col-md-5 themed-grid-col">
+                          <div class="form-group">
+                              <input type="date" class="form-control" id="inputCreatedAtFrom">
+                          </div>
+                      </div>
+                      <div class="col-md-1 themed-grid-col">
+                          по
+                      </div>
+                      <div class="col-md-5 themed-grid-col">
+                          <div class="form-group">
+                              <input type="date" class="form-control" id="inputCreatedAtTo">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3 themed-grid-col">
+                  <div class="pb-3">
+                      Льготы
+                  </div>
+                  <div class="row">
+                      <div class="form-group col-md-12">
+                          <select class="form-control" id="inputSocialPrivileges">
+                              <option selected>любой</option>
+                              <option>Есть</option>
+                              <option>Нет</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 themed-grid-col">
+                  <div class="pb-3">
+                      Вид Объекта
+                  </div>
+                  <div class="row">
+                      <div class="form-group col-md-12">
+                          <select id="inputTypeObject" class="form-control">
+                              <option selected>любой</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-12 ">
+              <a class="btn btn-outline-success col-sm-2 col-md-3 col-lg-1" onclick="findByFilter()">Найти</a>
+          </div>
+          <hr class="mb-4">
+      </form>
+      <div id="allRest" class="row card-group"></div>
+      <hr>
+      <nav aria-label="Page navigation example">
+          <ul class="pagination pagination-sm justify-content-center" id="navigation"></ul>
+      </nav>
+  </div>
+  
+  
+  
+      
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+  </body>
+  </html>
